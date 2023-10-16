@@ -8,10 +8,10 @@
 function convertToCelsius(fahren) {
     if (typeof fahren === "string") {
       fahren = parseFloat(fahren);
-    }
+    } 
     return (fahren - 32) * (5/9);
   }
-  
+
   /**
    * Takes both numbers (F, C) and display a message with
    * both numbers and how that temp makes you feel using
@@ -33,13 +33,17 @@ function convertToCelsius(fahren) {
       feeling = "Very Cold";
     } else if (fahren < 64) {
       feeling = "Cold";
-    } else if (fahren < 86){
+    } else if (fahren < 86) {
       feeling = "Warm";
     } else if (fahren < 100) {
       feeling = "Hot";
+    } else {
+      feeling = "Very Hot";
     }
-  }
-  
+    return `The temperature is ${fahren}°F (${celc.toFixed(2)}°C) and it feels ${feeling}.`;
+}
+
+//Additionally, you need to ensure that the fahren value passed into createMessage is a number:  
   /**
    * Takes a number and returns a random integer from 0 to the limit
    * @param {number} limit
